@@ -27,7 +27,7 @@ public class ContaCorrente {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
+    private void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
