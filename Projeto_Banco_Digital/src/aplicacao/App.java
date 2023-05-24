@@ -17,6 +17,8 @@ public class App {
                 "231287"
         );
 
+        System.out.println("Criado a conta de " + usuario1.getNome());
+
         Usuario usuario2 = new Usuario(
                 "Luiz",
                 "014.983.852-54",
@@ -27,10 +29,11 @@ public class App {
                 "109421"
         );
 
+        System.out.println("Criado a conta de " + usuario2.getNome());
+
         Login login1 = new Login(usuario1, "thiagohgcoutinho@gmail.com", "231287");
 
         login1.fazerLogin();
-
 
         login1.esqueciSenha("thiagohgcoutinho@gmail.com", "058.945.024-70", "140320");
 
