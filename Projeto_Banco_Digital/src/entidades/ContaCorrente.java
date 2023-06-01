@@ -72,13 +72,13 @@ public class ContaCorrente {
 
     public void depositar(double valor) {
         this.saldo += valor;
-        System.out.println("Depósito de R$ " + valor + " realizado com sucesso realizado na conta de " + this.usuario.getNome() + "!");
+        System.out.println("Depósito de R$ " + valor + " realizado com sucesso na conta de " + this.usuario.getNome() + "! Saldo Atual de R$ " + this.saldo);
     }
 
     public void sacar(double valor) {
         if (valor <= (this.saldo + this.limiteChequeEspecial)) {
             this.saldo -= valor;
-            System.out.println("Saque de R$ " + valor + " realizado com sucesso!");
+            System.out.println("Saque de R$ " + valor + " realizado com sucesso! Saldo Atual de R$ " + this.saldo);
         } else {
             System.out.println("Saldo insuficiente para realizar o saque.");
         }
