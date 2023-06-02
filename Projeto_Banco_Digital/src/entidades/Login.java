@@ -18,7 +18,7 @@ public class Login {
     public boolean fazerLogin() {
 
         if (this.email.equals(this.usuario.getEmail()) && this.senha.equals(this.usuario.getSenha())) {
-            System.out.println("Login realizado com sucesso!");
+            System.out.println("Login de " + this.usuario.getNome() + " realizado com sucesso!");
             return true;
         } else {
             System.out.println("Email ou senha incorretos, tente novamente.");

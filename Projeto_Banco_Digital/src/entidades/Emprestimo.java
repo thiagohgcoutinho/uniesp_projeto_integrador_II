@@ -1,5 +1,8 @@
 package entidades;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import java.time.LocalDate;
 
 public class Emprestimo {
@@ -73,6 +76,13 @@ public class Emprestimo {
 
     private double calcularValorParcela() {
         double juros = Math.pow(1 + taxaJuros, parcelas);
-        return valorEmprestimo * ((juros * taxaJuros) / (juros - 1));
+        double valorParcela = valorEmprestimo * ((juros * taxaJuros) / (juros - 1));
+
+        DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.US);
+        DecimalFormat formato = new DecimalFormat("#0.00", formatSymbols);
+        String valorParcelaFormatado = formato.format(valorParcela);
+
+        return Double.parseDouble(valorParcelaFormatado);
+
     }
 }
