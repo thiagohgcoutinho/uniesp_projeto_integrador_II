@@ -63,7 +63,7 @@ public class App {
 
         System.out.println("Consulta dos dados da Conta Corrente de " + usuario1.getNome() + ".");
 
-        contaCorrente1.consultarDadosContaCorrente();
+        contaCorrente1.consultarDadosConta();
 
         System.out.println("Consulta do saldo da Conta Corrente de " + usuario1.getNome() + ".");
 
@@ -75,19 +75,19 @@ public class App {
 
         System.out.println("Consulta dos dados da Conta Poupança de " + usuario1.getNome() + ".");
 
-        contaPoupanca1.consultarDadosContaPoupanca();
+        contaPoupanca1.consultarDadosConta();
 
-        System.out.println("Consulta do saldo da Conta Corrente de " + usuario1.getNome() + ".");
+        System.out.println("Consulta do saldo da Conta Poupança de " + usuario1.getNome() + ".");
 
-        contaPoupanca1.consultarSaldoPoupanca();
+        contaPoupanca1.consultarSaldo();
 
         System.out.println("Consulta dos dados da Conta Investimento de " + usuario1.getNome() + ".");
 
-        contaInvestimento1.consultarDadosContaInvestimento();
+        contaInvestimento1.consultarDadosConta();
 
         System.out.println("Consulta do saldo da Conta Investimento de " + usuario1.getNome() + ".");
 
-        contaInvestimento1.consultarSaldoInvestimento();
+        contaInvestimento1.consultarSaldo();
 
         System.out.println("Depósito na Conta Corrente de " + usuario1.getNome() + ".");
 
@@ -99,19 +99,19 @@ public class App {
 
         System.out.println("Depósito na Conta Poupança de " + usuario1.getNome() + ".");
 
-        contaPoupanca1.depositarPoupanca(5000.0);
+        contaPoupanca1.depositar(5000.0);
 
         System.out.println("Saque na Conta Poupança de " + usuario1.getNome() + ".");
 
-        contaPoupanca1.sacarPoupanca(250.0);
+        contaPoupanca1.sacar(250.0);
 
         System.out.println("Depósito na Conta Investimento de " + usuario1.getNome() + ".");
 
-        contaInvestimento1.depositarInvestimento(10000.0);
+        contaInvestimento1.depositar(10000.0);
 
         System.out.println("Saque na Conta Investimento de " + usuario1.getNome() + ".");
 
-        contaInvestimento1.sacarInvestimento(1250.0);
+        contaInvestimento1.sacar(1250.0);
 
         System.out.println("Rendimento da Conta Poupança de " + usuario1.getNome() + ".");
 
@@ -129,13 +129,21 @@ public class App {
 
         CartaoDeCredito cartaoDeCredito1 = new CartaoDeCredito(contaCorrente1);
 
+        System.out.println("Consultar dados do Cartao de Crédito de " + usuario1.getNome());
+
+        cartaoDeCredito1.consultarDadosCartao();
+
         System.out.println("Solicitação de Upgrade de Cartão de Crédito de " + usuario1.getNome() + ".");
 
         cartaoDeCredito1.solicitarUpgradeParaPlatinum();
 
+        cartaoDeCredito1.consultarDadosCartao();
+
         System.out.println("Solicitação de novo Upgrade de Cartão de Crédito de " + usuario1.getNome() + ".");
 
         cartaoDeCredito1.solicitarUpgradeParaBlack();
+
+        cartaoDeCredito1.consultarDadosCartao();
 
         System.out.println("Alteração de senha de Cartão de Crédito de " + usuario1.getNome() + ".");
 

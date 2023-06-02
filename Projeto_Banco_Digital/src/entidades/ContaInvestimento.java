@@ -1,44 +1,42 @@
 package entidades;
 
-public class ContaInvestimento extends ContaCorrente{
-    private int numeroContaInvestimento;
+public class ContaInvestimento extends Conta{
+
     private double saldo;
-    private Usuario usuario;
 
     public ContaInvestimento(Usuario usuario) {
         super(usuario);
-        this.numeroContaInvestimento = gerarNumeroContaInvestimento(usuario);
         this.saldo = 0.0;
     }
 
-    public int getNumeroContaInvestimento() {
-        return numeroContaInvestimento;
-    }
-
-    public double getSaldoInvestimento() {
+    public double getSaldo() {
         return saldo;
     }
 
-    private void setSaldoInvestimento(double saldo) {
+    private void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
-    public int gerarNumeroContaInvestimento(Usuario usuario) {
-        int numContaCorrente = getNumeroConta() / 10;
-        return numContaCorrente * 10;
-    }
-
-    public double consultarSaldoInvestimento() {
+    @Override
+    public double consultarSaldo() {
         System.out.println("O saldo atual da Conta Investimento é R$ " + this.saldo);
         return this.saldo;
     }
 
-    public void depositarInvestimento(double valor) {
+    @Override
+    public void consultarDadosConta() {
+        System.out.println("Número da Conta: " + getNumConta());
+        System.out.println("Saldo: " + this.saldo);
+    }
+
+    @Override
+    public void depositar(double valor) {
         this.saldo += valor;
         System.out.println("Depósito de R$ " + valor + " realizado com sucesso na conta investimento de " + getUsuario().getNome() + "! Saldo Atual de R$ " + this.saldo);
     }
 
-    public void sacarInvestimento(double valor) {
+    @Override
+    public void sacar(double valor) {
         if (valor <= this.saldo) {
             this.saldo -= valor;
             System.out.println("Saque de R$ " + valor + " realizado com sucesso! Saldo Atual de R$ " + this.saldo);
@@ -54,8 +52,4 @@ public class ContaInvestimento extends ContaCorrente{
         return rendimento;
     }
 
-    public void consultarDadosContaInvestimento() {
-        System.out.println("Número da Conta Poupança: " + this.numeroContaInvestimento);
-        System.out.println("Saldo: " + this.saldo);
-    }
 }
